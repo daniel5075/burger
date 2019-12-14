@@ -1,40 +1,62 @@
-<h1>Burgers <br>
-    <img src="assets/img/burger.png" alt="Hamburger" />
-</h1>
+<div class="container">
+    <h1>Yummy Yummy Burgers <br>
+        <img src="assets/img/burger.png" alt="Hamburger" />
+    </h1>
+    <div class="row" id="uBurger">
+        <div class="col-lg-6">
+            <div class="card bg-info">
+                <h2>Uneaten Burger!</h2>
+                <h3>Click on the <span class="fa fa-cutlery"></span> to chose a burger for lunch</h3>
+                <ul>
 
-<h2>Uneaten Burger!</h2>
+                    {{#each burger}}
+                    {{#unless this.devoured}}
 
-<ul>
+                    <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                    <button type="button" class="eatburger btn" id="eatbutton" data-id="{{this.id}}"
+                        data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                    <hr>
 
-    {{#each burger}}
-    {{#unless this.devoured}}
-    <li>
-        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-        <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
-        <hr>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card bg-info">
+                <h2>That was yummy!!!</h2>
 
-<h2>That was yummy!!!</h2>
+                <ul>
+                    {{#each burger}}
+                    {{#if devoured}}
+                    <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                    <hr>
+                    {{/if}}
+                    {{/each}}
+                </ul>
 
-<ul>
-    {{#each burger}}
-    {{#if devoured}}
-    <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-    <hr>
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-
-<form class="create-form">
-    <label for="newburger">Enter a Burger:</label>
-    <input type="text" id="newburger" name="burger">
+            </div>
+        </div>
     </div>
-    <button type="submit" id="addburger">Add Burger </button>
+    <br>
+    <br>
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4" id="uBurger">
+            <div class="card bg-info">
+                <h2>Add a Burger</h2>
+
+                <form class="create-form">
+                    <label for="newburger">Enter a Burger:</label>
+                    <input type="text" id="newburger" name="burger">
+
+                    <button type="submit" id="addburger">Add Burger </button>
+
+                </form>
+            </div>
+        </div>
     </div>
-</form>
+    <br>
+</div>

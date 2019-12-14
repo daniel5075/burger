@@ -1,3 +1,18 @@
+
+body{
+    background-color: #b53333;
+   color: #15440a
+    
+}
+
 h1 {
-text-align: center;
+    text-align: center;
+    font-size: 50pt;
+    font-family: 'Amatic SC', cursive;
+    color: #15440a;
+}
+#uBurger{
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+  
 }
